@@ -402,7 +402,10 @@ int mailimap_append_send(mailstream * fd,
 
 static int is_atom(const char * str)
 {
-  if (* str == '\0')
+  if (str == NULL)
+    return 0;
+	
+ if (* str == '\0')
     return 0;
   
   while (* str != '\0') {
